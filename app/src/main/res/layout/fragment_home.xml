@@ -17,8 +17,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_thin"
+        android:layout_gravity="center"
+        android:fontFamily="@font/roboto"
         android:text="WELCOME"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_thin"
+        android:text="What Do we Do"
         android:textColor="@color/black"
         android:layout_gravity="center"
         android:textSize="20dp" />
