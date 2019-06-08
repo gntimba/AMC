@@ -29,6 +29,79 @@
         android:text="What Do we Do"
         android:textColor="@color/black"
         android:layout_gravity="center"
+        android:layout_marginBottom="50dp"
         android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text=" \u2022 Website Design and Development"
+        android:textColor="@color/black"
+        android:layout_gravity="left"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_thin"
+        android:text=" \u2022 Website Hosting"
+        android:textColor="@color/black"
+        android:layout_gravity="left"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_thin"
+        android:text=" \u2022 Mobile Apps Development"
+        android:textColor="@color/black"
+        android:layout_gravity="left"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text=" \u2022 System Development"
+        android:textColor="@color/black"
+        android:layout_gravity="left"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/text5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text=" \u2022 Document Management System"
+        android:textColor="@color/black"
+        android:layout_gravity="left"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/text6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_thin"
+        android:text=" \u2022 ICT Solutions and Consulting"
+        android:textColor="@color/black"
+        android:layout_gravity="left"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/text7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_thin"
+        android:text=" \u2022 setup online shop"
+        android:textColor="@color/black"
+        android:layout_gravity="left"
+        android:textSize="20dp" />
+
+
 
 </LinearLayout>

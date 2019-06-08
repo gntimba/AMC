@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 
 /**
@@ -50,6 +53,7 @@ public class HomeFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+    TextView text2,text3,text4,text5,text6,text7,text1,text8;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,14 +61,52 @@ public class HomeFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View rootView= inflater.inflate(R.layout.fragment_home, container, false);
+
+
+
+        Animation animBlink = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
+                R.anim.blink);
+        text1=rootView.findViewById(R.id.text1);
+        text1.setVisibility(View.VISIBLE);
+        text1.startAnimation(animBlink);
+
+        text2=rootView.findViewById(R.id.text2);
+        text2.setVisibility(View.VISIBLE);
+        text2.startAnimation(animBlink);
+
+        text3=rootView.findViewById(R.id.text3);
+        text3.setVisibility(View.VISIBLE);
+        text3.startAnimation(animBlink);
+
+        text4=rootView.findViewById(R.id.text4);
+        text4.setVisibility(View.VISIBLE);
+        text4.startAnimation(animBlink);
+
+        text5=rootView.findViewById(R.id.text5);
+        text5.setVisibility(View.VISIBLE);
+        text5.startAnimation(animBlink);
+
+        text6=rootView.findViewById(R.id.text6);
+        text6.setVisibility(View.VISIBLE);
+        text6.startAnimation(animBlink);
+
+        text7=rootView.findViewById(R.id.text7);
+        text7.setVisibility(View.VISIBLE);
+        text7.startAnimation(animBlink);
+
+
+
+        return  rootView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

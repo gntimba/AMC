@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
                     loadFragment(fragment);
                     return true;
                 case R.id.navigation_dashboard:
-                    toolbar.setTitle("Home");
+                    toolbar.setTitle("Contact");
                     fragment = new ContactFragment();
                     loadFragment(fragment);
                     return true;
@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements HomeFragment.OnFr
     private void loadFragment(Fragment fragment) {
         // load fragment
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+       // transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
         transaction.replace(R.id.frame_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
