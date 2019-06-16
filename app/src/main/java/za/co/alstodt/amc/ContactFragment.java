@@ -93,7 +93,19 @@ public class ContactFragment extends Fragment {
             {
                 //Toast.makeText(getActivity(),name.getText().toString().trim(), Toast.LENGTH_SHORT).show();
                 try {
+                    if(name.getText().toString().isEmpty())
+                        name.setError("Name must not be empty");
+                    if(email.getText().toString().isEmpty())
+                        email.setError("Email must not be empty");
+                    if(phone.getText().toString().isEmpty())
+                        phone.setError("Phone must not be empty");
+                    if(issue.getText().toString().isEmpty())
+                        issue.setError("Request must not be empty");
+
+                    if(!name.getText().toString().isEmpty()&& !email.getText().toString().isEmpty()&& !phone.getText().toString().isEmpty()&& !issue.getText().toString().isEmpty())
                     sendPost(name.getText().toString().trim(), email.getText().toString().trim(), phone.getText().toString().trim(), issue.getText().toString().trim());
+                    else
+                        Toast.makeText(getActivity(),"please check the fields are not empty", Toast.LENGTH_LONG).show();
                 }catch (Exception e)
                 {
                     Toast.makeText(getActivity(),e.toString(), Toast.LENGTH_LONG).show();
