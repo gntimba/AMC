@@ -3,10 +3,22 @@ package za.co.alstodt.amc;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.TextInputEditText;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import za.co.alstodt.amc.model.form;
+import za.co.alstodt.amc.remote.APIService;
+import za.co.alstodt.amc.remote.ApiUtils;
 
 
 /**
@@ -18,6 +30,13 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class ContactFragment extends Fragment {
+
+
+    private static final String TAG = "static";
+    Button submit;
+    APIService mAPIService;
+    TextInputEditText email,name,phone;
+    EditText issue;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -64,10 +83,58 @@ public class ContactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false);
+        View view = inflater.inflate(R.layout.fragment_contact, container, false);
+        submit=view.findViewById(R.id.submit);
+        mAPIService = ApiUtils.getAPIService();
+        submit.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                //Toast.makeText(getActivity(),name.getText().toString().trim(), Toast.LENGTH_SHORT).show();
+                try {
+                    sendPost(name.getText().toString().trim(), email.getText().toString().trim(), phone.getText().toString().trim(), issue.getText().toString().trim());
+                }catch (Exception e)
+                {
+                    Toast.makeText(getActivity(),e.toString(), Toast.LENGTH_LONG).show();
+                    Log.i(TAG, e.toString());
+                }
+            }
+        });
+        email=view.findViewById(R.id.email);
+        name=view.findViewById(R.id.name);
+        phone=view.findViewById(R.id.phone);
+        issue=view.findViewById(R.id.editText);
+        return view;
+    }
+    public void sendPost(String name, String email,String phone,String cmment) {
+
+        mAPIService.insert("application/json",name,cmment,phone,email).enqueue(new Callback<form>() {
+            @Override
+            public void onResponse(Call<form> call, Response<form> response) {
+
+                if(response.isSuccessful()) {
+                    showResponse(response.body().getFeedback());
+                    Log.e(TAG, "post submitted to API.  " + response.body().getFeedback());
+                   // Toast.makeText(getActivity(),"sent "+response.body().getFeedback(), Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<form> call, Throwable t) {
+                t.printStackTrace();
+                Log.e(TAG, "Unable to submit post to API.");
+            }
+        });
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+    public void showResponse(String response) {
+  
+        Toast.makeText(getActivity(),response, Toast.LENGTH_SHORT).show();
+    }
+
+
+            // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);

@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    TextView text2,text3,text4,text5,text6,text7,text1,text8;
+    TextView text2,text3,text4,text5,text6,text7,text1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
