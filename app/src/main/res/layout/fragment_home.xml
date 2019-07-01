@@ -30,7 +30,7 @@
         android:textColor="@color/black"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
-        android:textSize="20dp" />
+        android:textSize="15dp" />
     <include layout="@layout/content_main" />
 
     <TextView
@@ -51,7 +51,7 @@
         android:text=" \u2022 Website Hosting"
         android:textColor="@color/black"
         android:layout_gravity="left"
-        android:textSize="20dp" />
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/text3"
@@ -98,7 +98,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_thin"
-        android:text=" \u2022 setup online shop"
+        android:text=" \u2022 Setup Online Shop"
         android:textColor="@color/black"
         android:layout_gravity="left"
         android:textSize="15dp" />
