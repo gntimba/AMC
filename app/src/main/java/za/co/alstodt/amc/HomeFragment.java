@@ -9,7 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
+import com.synnapps.carouselview.CarouselView;
+import com.synnapps.carouselview.ImageListener;
 
 
 /**
@@ -72,8 +75,8 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View rootView= inflater.inflate(R.layout.fragment_home, container, false);
 
-
-
+        CarouselView carouselView;
+        final int[] sampleImages = {R.drawable.image1,R.drawable.image2,R.drawable.image3,R.drawable.image4,R.drawable.image5,R.drawable.image6,R.drawable.image7,R.drawable.image8,R.drawable.image9};
         Animation animBlink = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),
                 R.anim.blink);
         text1=rootView.findViewById(R.id.text1);
@@ -103,6 +106,17 @@ public class HomeFragment extends Fragment {
         text7=rootView.findViewById(R.id.text7);
         text7.setVisibility(View.VISIBLE);
         text7.startAnimation(animBlink);
+        ImageListener imageListener = new ImageListener() {
+            @Override
+            public void setImageForPosition(int position, ImageView imageView) {
+                imageView.setImageResource(sampleImages[position]);
+            }
+        };
+
+        carouselView = rootView.findViewById(R.id.carouselView);
+        carouselView.setPageCount(sampleImages.length);
+        carouselView.setImageListener(imageListener);
+
 
 
 
@@ -126,6 +140,7 @@ public class HomeFragment extends Fragment {
                     + " must implement OnFragmentInteractionListener");
         }
     }
+
 
     @Override
     public void onDetach() {

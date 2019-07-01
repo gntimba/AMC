@@ -29,8 +29,9 @@
         android:text="What Do we Do"
         android:textColor="@color/black"
         android:layout_gravity="center"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="10dp"
         android:textSize="20dp" />
+    <include layout="@layout/content_main" />
 
     <TextView
         android:id="@+id/text1"
@@ -40,7 +41,7 @@
         android:text=" \u2022 Website Design and Development"
         android:textColor="@color/black"
         android:layout_gravity="left"
-        android:textSize="20dp" />
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/text2"
@@ -60,7 +61,7 @@
         android:text=" \u2022 Mobile Apps Development"
         android:textColor="@color/black"
         android:layout_gravity="left"
-        android:textSize="20dp" />
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/text4"
@@ -70,7 +71,7 @@
         android:text=" \u2022 System Development"
         android:textColor="@color/black"
         android:layout_gravity="left"
-        android:textSize="20dp" />
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/text5"
@@ -80,7 +81,7 @@
         android:text=" \u2022 Document Management System"
         android:textColor="@color/black"
         android:layout_gravity="left"
-        android:textSize="20dp" />
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/text6"
@@ -90,7 +91,7 @@
         android:text=" \u2022 ICT Solutions and Consulting"
         android:textColor="@color/black"
         android:layout_gravity="left"
-        android:textSize="20dp" />
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/text7"
@@ -100,7 +101,7 @@
         android:text=" \u2022 setup online shop"
         android:textColor="@color/black"
         android:layout_gravity="left"
-        android:textSize="20dp" />
+        android:textSize="15dp" />
 
 
 
