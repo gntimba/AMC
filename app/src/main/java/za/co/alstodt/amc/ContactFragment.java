@@ -121,7 +121,7 @@ public class ContactFragment extends Fragment {
     }
     public void sendPost(String name, String email,String phone,String cmment) {
 
-        mAPIService.insert("application/json",name,cmment,phone,email).enqueue(new Callback<form>() {
+        mAPIService.insert(name,cmment,phone,email).enqueue(new Callback<form>() {
             @Override
             public void onResponse(Call<form> call, Response<form> response) {
 

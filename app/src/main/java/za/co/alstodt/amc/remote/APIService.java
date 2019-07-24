@@ -10,7 +10,7 @@ import za.co.alstodt.amc.model.form;
 public interface APIService {
     @POST("mail.php")
     @FormUrlEncoded
-    Call<form> insert(@Header("Content-Type") String content_type,
+    Call<form> insert(
                       @Field("name") String name,
                       @Field("comment") String comment,
                       @Field("phone") String phone,
